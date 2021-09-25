@@ -1,0 +1,22 @@
+What is a Self-Join?
+A self JOIN is a case of regular join where a table is joined to itself based on some relation between its own column(s). Self-join uses the INNER JOIN or LEFT JOIN clause and a table alias is used to assign different names to the table within the query.
+
+SELECT A.emp_id AS "Emp_ID",A.emp_name AS "Employee",
+B.emp_id AS "Sup_ID",B.emp_name AS "Supervisor"
+FROM employee A, employee B
+WHERE A.emp_sup = B.emp_id;
+13. What is a Cross-Join?
+Cross join can be defined as a cartesian product of the two tables included in the join. The table after join contains the same number of rows as in the cross-product of the number of rows in the two tables. If a WHERE clause is used in cross join then the query will work like an INNER JOIN.
+
+SELECT stu.name, sub.subject 
+FROM students AS stu
+CROSS JOIN subjects AS sub;
+
+Write a SQL statement to CROSS JOIN 'table_1' with 'table_2' and fetch 'col_1' from table_1 & 'col_2' from table_2 respectively. Do not use alias.
+Write a SQL statement to perform SELF JOIN for 'Table_X' with alias 'Table_1' and 'Table_2', on columns 'Col_1' and 'Col_2' respectively.
+14. What is an Index? Explain its different types.
+A database index is a data structure that provides a quick lookup of data in a column or columns of a table. It enhances the speed of operations accessing data from a database table at the cost of additional writes and memory to maintain the index data structure.
+
+CREATE INDEX index_name   /* Create Index */
+ON table_name (column_1, column_2);
+DROP INDEX index_name;   /* Drop Index */There are different types of indexes that can 
